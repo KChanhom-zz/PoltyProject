@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Line graph</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/jquery.dataTables.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+
+</head>
+<body>
+    <h1 align="center">Use Python build and pass a value to the template</h1>
+    <div class="chart" id="linegraph">
+        <script>
+            var graphs = {{plot | safe}};
+                Plotly.plot('linegraph',graphs,{});
+        </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Python || Flask || SQL Server</title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="nav nav-pills nav-fill">
+                    <a class="nav-item nav-link active" href="/">Home</a>
+                      <a class="nav-item nav-link" href="/simpleGraph1">Graph1</a>
+                      <a class="nav-item nav-link" href="/simpleGraph2">Graph2</a>
+                      <a class="nav-item nav-link" href="/simpleGraph3">Graph3</a>
+                      <a class="nav-item nav-link" href="/simpleGraph4">Graph4</a>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <br>
+                    <h1 align="center">Embed Graph from Plotly</h1>
+                    <div align="center">
+                        <iframe width="900" height="500" frameborder="0" scrolling="no" src="//plot.ly/~KChanhom/3.embed"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 align="center">Get data from SQL Server</h1>
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th scope="col">Name</th>
+                          <th scope="col">Age</th>
+                          <th scope="col">City</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for row in datas %}
+                        <tr>
+                          <td>{{row.0}}</td>
+                          <td>{{row.1}}</td>
+                          <td>{{row.2}}</td>
+                        </tr>
+                       {% endfor %}
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
