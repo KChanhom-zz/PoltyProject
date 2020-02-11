@@ -1,9 +1,8 @@
 from flask import Flask, render_template, request
 import plotly
-import pypyodbc
+import pyodbc as pypyodbc
 import plotly.graph_objects as go
 import numpy as np
-import plotly.offline as ply
 import json
 import pandas as pd
 
@@ -21,8 +20,6 @@ def hello_world():
     cursor = conn.cursor()
     cursor.execute('SELECT * FROM Person')
     rows = cursor.fetchall()
-
-    get_data_from_database()
     return render_template("index.html", datas=rows)
 
 
